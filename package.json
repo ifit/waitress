@@ -1,0 +1,26 @@
+{
+  "name": "waitress",
+  "description": "Simple flow control for multiple parallel async calls.",
+  "author": {
+    "name": "Adam Blackburn",
+    "email": "adam@ifit.com"
+  },
+  "version": "0.0.1",
+  "main": "index.js",
+  "keywords": [
+    "flow-control",
+    "flow",
+    "waitress",
+    "async",
+    "parallel",
+    "callback"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ifit/waitress.git"
+  },
+  "homepage": "https://github.com/ifit/waitress",
+  "dependencies": {
+    "argue": "*"
+  }
+}
