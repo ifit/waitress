@@ -1,12 +1,16 @@
+"use strict";
+
 var argue = require('argue');
 
 var waitress = function(/* count, [error = ''], [dieEarly = false], cb */) {
   var sig = argue(arguments);
 
+  var count, error, dieEarly, cb;
+
   dieEarly = false;
   error = '';
 
-  switch(sig) {
+  switch (sig) {
     case 'nebf':
     case 'nsbf':
       count = arguments[0];
@@ -34,8 +38,7 @@ var waitress = function(/* count, [error = ''], [dieEarly = false], cb */) {
       break;
 
     default:
-      cb(new Error("waitress: could not parse parameters."));
-      return function(){};
+      throw new Error("waitress: could not parse parameters.");
   }
   if (typeof error === "string") {
     error = new Error(error);
@@ -66,7 +69,6 @@ var waitress = function(/* count, [error = ''], [dieEarly = false], cb */) {
         args.push(results);
       }
       cb.apply(null, args);
-      cb = function(){};
     }
   });
   return next;
