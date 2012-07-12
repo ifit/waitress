@@ -19,6 +19,13 @@ assert.throws(function() {
   done(new Error('hai tai mai shu'));
 }, /hai tai mai shu/);
 
+// for zero args
+assert.throws(function() {
+  var done = waitress(0, function(err) {
+    throw(new Error("zero args hurrr"));
+  });
+}, /zero args hurrr/);
+
 assert.doesNotThrow(function() {
   var done = waitress(3, new Error('fail'), function(err) {
     if (err) throw err;

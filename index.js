@@ -44,6 +44,11 @@ var waitress = function(/* count, [error = ''], [dieEarly = false], cb */) {
     error = new Error(error);
   }
 
+  if (count === 0) {
+    cb(null);
+    return function(){};
+  }
+
   var done = 0;
   var cberr = null;
   var results = [];
