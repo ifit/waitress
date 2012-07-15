@@ -65,7 +65,7 @@ var waitress = function(/* count, [error = ''], [dieEarly = false], cb */) {
     } else if (err === false) {
       cberr = error;
     }
-    if (result) {
+    if (result != null) {
       results.push(result);
     }
     if (done === count) {
