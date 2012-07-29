@@ -2,25 +2,19 @@
 ### Basic Usage
 
 ```javascript
-var done = waitress(count, [error = ''], [dieEarly = false], cb);
+var done = waitress(count, cb);
 ```
 
 Waitress returns a function, `done`, that will wait to be called `count` times before executing the `cb` passed into it.
 
-If an `error` is provided and `done` is called with `false` as it's first argument, then `error` will be passed into `callback`.
-
-If `dieEarly` is set to true, waitress will call callback on the first
-error, otherwise it will wait for all callbacks to finish and call `cb`
-with the last error it received.
-
 ```javascript
-var done = waitress(3, 'your error', function(err) {
+var done = waitress(3, function(err) {
   if (err) throw err;
 });
 
 done();
-done();
-done(false); // causes callback to be fired with an error condition
+done(new Error('oh noes')); // causes callback to be fired with an error condition
+done(false); // also causes callback to be fired with an error condition
 ```
 
 ### Getting results
