@@ -5,7 +5,7 @@
     "name": "Adam Blackburn",
     "email": "adam@ifit.com"
   },
-  "version": "0.0.4",
+  "version": "0.1.0",
   "main": "index.js",
   "keywords": [
     "flow-control",
@@ -19,8 +19,5 @@
     "type": "git",
     "url": "git://github.com/ifit/waitress.git"
   },
-  "homepage": "https://github.com/ifit/waitress",
-  "dependencies": {
-    "argue": "*"
-  }
+  "homepage": "https://github.com/ifit/waitress"
 }

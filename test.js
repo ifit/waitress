@@ -2,14 +2,14 @@ var waitress = require('./index')
   , assert = require('assert');
 
 assert.throws(function() {
-  var done = waitress(3, 'fail', function(err) {
+  var done = waitress(3, function(err) {
     if (err) throw err;
   });
 
   done();
   done();
   done(false);
-}, /fail/);
+});
 
 assert.throws(function() {
   var done = waitress(1, function(err) {
@@ -27,7 +27,7 @@ assert.throws(function() {
 }, /zero args hurrr/);
 
 assert.doesNotThrow(function() {
-  var done = waitress(3, new Error('fail'), function(err) {
+  var done = waitress(3, function(err) {
     if (err) throw err;
   });
 
@@ -40,7 +40,6 @@ assert.doesNotThrow(function() {
 assert.throws(function() {
   var done = waitress(3, function(err, results) {
     if (err) throw err;
-    console.log(results);
   });
 
   done();
@@ -48,28 +47,10 @@ assert.throws(function() {
   done(new Error("no no no"));
 }, /no no no/);
 
-assert.throws(function() {
-  var done = waitress(3, true, function(err, results) {
-    if (err) throw err;
-  });
-
-  done();
-  done(new Error("nein nein nein"));
-  done(new Error("no no no"));
-}, /nein nein nein/);
-
-assert.throws(function() {
-  var done = waitress(function(err) {
-    if (err) throw err;
-  });
-
-  done();
-}, /could not parse parameters/);
-
 (function() {
-  var done = waitress(3, true, function(err, results) {
+  var done = waitress(3, function(err, results) {
     if (err) throw err;
-    assert.deepEqual(results, [1,2,3], "results aggregation wrong");
+    assert.deepEqual(results, [1, 2, 3], "results aggregation wrong");
   });
 
   done(null, 1);
