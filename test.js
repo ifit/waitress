@@ -8,7 +8,7 @@ assert.throws(function() {
 
   done();
   done();
-  done(false);
+  done(new Error);
 });
 
 assert.throws(function() {

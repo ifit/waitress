@@ -8,28 +8,20 @@ var waitress = function(count, cb) {
 
   var done = 0
     , cberr = null
-    , results
-    , args;
+    , results = []
+    ;
 
-  var next = (function(err, result) {
-    ++done;
-    if (err instanceof Error) {
-      cberr = err;
-    } else if (err === false) {
-      cberr = cberr || new Error;
-    }
+  var next = function(err, result) {
+    done += 1;
+    if (err) cberr = err;
     if (result !== undefined) {
-      results = results || []
       results.push(result);
     }
     if (done === count) {
-      args = [cberr];
-      if (results && results.length) {
-        args.push(results);
-      }
-      cb.apply(null, args);
+      cb(cberr, results);
     }
-  });
+  };
+
   return next;
 };
 
