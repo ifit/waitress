@@ -2,7 +2,7 @@
 
 var waitress = function(count, cb) {
   if (count === 0) {
-    cb(null);
+    process.nextTick(cb);
     return function() {};
   }
 
