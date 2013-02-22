@@ -1,3 +1,4 @@
+[![browser support](http://ci.testling.com/ifit/waitress.png)](http://ci.testling.com/ifit/waitress)
 
 ### Basic Usage
 
