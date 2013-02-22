@@ -5,6 +5,9 @@
     "name": "Adam Blackburn",
     "email": "adam@ifit.com"
   },
+  "devDependencies": {
+    "mocha": "~1.7.4"
+  },
   "version": "0.1.4",
   "main": "index.js",
   "keywords": [
