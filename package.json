@@ -19,5 +19,15 @@
     "type": "git",
     "url": "git://github.com/ifit/waitress.git"
   },
-  "homepage": "https://github.com/ifit/waitress"
+  "homepage": "https://github.com/ifit/waitress",
+  "testling": {
+    "files": "test.js",
+    "browsers": {
+      "ie": [ 8, 9 ],
+      "firefox": [ 13 ],
+      "chrome": [ 20 ],
+      "safari": [ 5.1 ],
+      "opera": [ 12 ]
+    }
+  }
 }
