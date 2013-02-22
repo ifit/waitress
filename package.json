@@ -22,6 +22,7 @@
   "homepage": "https://github.com/ifit/waitress",
   "testling": {
     "files": "test.js",
+    "harness": "mocha",
     "browsers": {
       "ie": [ 8, 9 ],
       "firefox": [ 13 ],
