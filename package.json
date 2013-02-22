@@ -27,11 +27,13 @@
     "files": "test.js",
     "harness": "mocha",
     "browsers": {
-      "ie": [ 8, 9, 10 ],
-      "firefox": [ 10, 11, 12, 13, "nightly" ],
-      "chrome": [ 18, 19, 20, "canary" ],
+      "ie": [ 7, 8, 9, 10 ],
+      "firefox": [ 3.6, 12, 13, "nightly" ],
+      "chrome": [ 19, 20, "canary" ],
       "safari": [ 5.0, 5.1 ],
-      "opera": [ 12 ]
+      "opera": [ 12 ],
+      "iphone": [ "6.0" ],
+      "ipad": [ "6.0" ]
     }
   }
 }
