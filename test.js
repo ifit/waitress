@@ -26,8 +26,9 @@ describe('waitress', function() {
 
   it('should execute cb with zero count', function(next) {
     // for zero args
-    var done = waitress(0, function(err) {
+    var done = waitress(0, function(err, arr) {
       assert.ok(!err);
+      assert.deepEqual(arr, []);
       next();
     });
   });
